@@ -1,0 +1,14 @@
+<div class="lesson_form_section">
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+    {{form.date.label}}
+    {{form.date}}
+    {{form.topic_covered.label}}
+    {{form.topic_covered}}
+    {{form.remark.label}}
+    {{form.remark}}
+    </div>
+    <input type="submit" name="lesson_tought" value="Submit"/>
+    </form>
+</div>

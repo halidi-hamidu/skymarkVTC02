@@ -1,0 +1,36 @@
+<div class="modal fade" id="accountForStaffModal{{staff.id}}">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Account for Staff <code>{{staff.staff_full_name}}</code></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <form action="" method="post">
+              {% csrf_token %}
+              <input type="text" name="staff_id" id="" value="{{staff.id}}" style="display: none;">
+              {{form2.username.label}}
+              {{form2.username}}
+              {{form2.password1.label}}
+              {{form2.password1}}
+              {{form2.password2.label}}
+              {{form2.password2}}
+              <input type="submit" name="account_for_staff" class="mt-4"/>
+            </form>
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

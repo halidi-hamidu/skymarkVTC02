@@ -1,0 +1,36 @@
+
+
+<div class="modal fade" id="studentsAttendenceModal{{student.id}}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="studentFeePayments"><code>{{student.student_full_name}}</code> is </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+       <form action="" method="post">
+       {% csrf_token %}
+       <input type="text" name="student_name" id="" value="{{student.id}}" style="display: none;">
+       {{form3.date.label}}
+       {{form3.date}}
+       <div class="form-group">
+        <div class="button d-flex">
+          <input type="submit" name="student_is_absent" value="student is absent" class="mt-4 mr-4 ">
+          <input type="submit" name="student_is_present" value="student is present" class="mt-4  btn-outline-success">
+        </div>
+       </div>
+  
+       </form>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">close</button>
+  
+      </div>
+    </div>
+  </div>
+  </div>
+  

@@ -1,0 +1,44 @@
+<div class="modal fade" id="staffPermisionModal{{staff.id}}">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Permission for Staff <code>{{staff.staff_full_name}}</code></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <form action="" method="post">
+              {% csrf_token %}
+              <input type="text" name="staff_id" id="" value="{{staff.id}}" style="display: none;">
+              {{form3.staff_can_add_or_edit_or_delete_classes.label }} ?
+              {{form3.staff_can_add_or_edit_or_delete_classes  }}
+                <hr>
+              {{form3.staff_can_add_or_edit_or_delete_courses.label }} ?
+              {{form3.staff_can_add_or_edit_or_delete_courses  }}
+              <hr>
+              {{form3.staff_can_add_or_edit_or_delete_student_details.label }} ?
+              {{form3.staff_can_add_or_edit_or_delete_student_details  }}
+              <hr>
+              {{form3.staff_can_add_or_edit_or_delete_staff_details.label }} ?
+              {{form3.staff_can_add_or_edit_or_delete_staff_details  }}
+              <hr>
+              {{form3.staff_can_add_or_edit_or_delete_lessons.label }} ?
+              {{form3.staff_can_add_or_edit_or_delete_lessons  }}
+              <input type="submit" name="staff_permision" class="mt-4"/>
+            </form>
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="students_form_section">
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="add_student_info" class="mt-4"></input>
+  </form>
+</div>

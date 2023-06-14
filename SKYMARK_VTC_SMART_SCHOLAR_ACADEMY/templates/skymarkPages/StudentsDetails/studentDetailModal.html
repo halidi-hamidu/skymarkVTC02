@@ -1,0 +1,116 @@
+<div class="modal fade" id="studentDetailModal{{student.id}}">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Student <code>{{student.student_full_name}}</code> Detail information</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+              
+              <!-- Timeline -->
+              <ul class="timeline">
+                  <li class="timeline-item bg-white rounded mx-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <div class="item" style="display:flex;justify-content:space-between;">
+                        <div class="image">
+                          <img src="{{student.student_image.url }}" class="img-fluid" width="200px">
+                        </div>
+                        <div class="informations pl-2 m-1" style="display:inline-block;width:100%">
+                          <h2 class="h5 mb-0">Student Basic information</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>Student name : <mark>{{student.student_full_name}}</mark></span>
+    `                       <hr class="sidebar-divider">
+                         
+                          <span class="text-small d-block mt-0 font-weight-light">Sex: <code>{{student.gender}}</code></span>
+                          <span class="text-small d-block font-weight-light">Course: <code>{{student.course_name}}</code></span>
+                          <span class="text-small d-block font-weight-light">Date of admission: <code>{{student.admission_date}}</code></span>
+                          <span class="text-small d-block font-weight-light">Phone number: <code> {{student.phone_number}}</code></span>
+                          <span class="text-small d-block font-weight-light">Email: <code> {{student.email}}</code></span>
+                        </div>
+                      </div>
+                      
+                  </li>
+                  <li class="timeline-item bg-white rounded mx-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Parent Details</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>name : {{student.parent_name}}</span>
+    `                       <hr class="sidebar-divider">
+                      
+                      <p class="text-small mt-2 font-weight-light">Phone number : {{student.parent_phone_number}}</p>
+                      <!-- <p class="text-small mt-2 font-weight-light">Libero expedita explicabo eius fugiat quia aspernatur autem laudantium error architecto recusandae natus sapiente sit nam eaque, consectetur porro molestiae ipsam! Deleniti.</p> -->
+                  </li>
+                  <li class="timeline-item bg-white rounded mx-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Fees paid for <code>{{student.course_name}}</code> </h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i></span>
+    `                  <hr class="sidebar-divider">
+                      {% for fee in get_all_fee_from_all_students %}
+                      {% if fee.student_full_name.id == student.id %}
+                      <div class="item" style="display:flex;justify-content:space-between;">
+                        <div class="dates">
+                         <p>{{fee.date }}</p>
+
+                        </div>
+                        <div class="informations pl-2 m-1" style="display:inline-block;width:100%;text-align: right;">
+                          <p class="text-small d-block mt-0 font-weight-light">{{fee.amount_paid}} Tsh</p>
+                          <!-- <p class="text-small d-block font-weight-light">{{student.course_name}}</p> -->
+    `                  <hr class="sidebar-divider">
+                          
+                        </div>
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+                  </li>
+
+                  <li class="timeline-item bg-white rounded mx-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Student attendance </h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i></span>
+    `                  <hr class="sidebar-divider">
+                      {% for attendance in get_attendance_for_all_student %}
+                      {% if attendance.student_name.id == student.id %}
+                      <div class="item" style="display:flex;justify-content:space-between;">
+                        <div class="dates">
+                         <p>{{attendance.date }}</p>
+
+                        </div>
+                        <div class="informations pl-2 m-1" style="display:inline-block;width:100%;text-align: right;">
+                          {% if attendance.attendance_status == True %}
+                          <p class="text-small d-block mt-0 font-weight-light">presents </p>
+                          {% else %}
+                          <p class="text-small d-block mt-0 font-weight-light">Absents </p>
+
+                          {% endif %}
+                          <!-- <p class="text-small d-block font-weight-light">{{student.course_name}}</p> -->
+    `                  <hr class="sidebar-divider">
+                          
+                        </div>
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+                  </li>
+                  <!-- <li class="timeline-item bg-white rounded ml-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Title of section 3</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>18 August, 2019</span>
+                      <p class="text-small mt-2 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                  </li>
+                  <li class="timeline-item bg-white rounded ml-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Title of section 4</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>10 October, 2019</span>
+                      <p class="text-small mt-2 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                      <p class="text-small mt-2 font-weight-light">Voluptatibus temporibus esse illum eum aspernatur, fugiat suscipit natus! Eum corporis illum nihil officiis tempore. Excepturi illo natus libero sit doloremque, laborum molestias rerum pariatur quam ipsam necessitatibus incidunt, explicabo.</p>
+                  </li> -->
+              </ul><!-- End -->
+
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

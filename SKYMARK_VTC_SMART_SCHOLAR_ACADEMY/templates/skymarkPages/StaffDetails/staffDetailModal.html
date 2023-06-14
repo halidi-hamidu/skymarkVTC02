@@ -1,0 +1,69 @@
+<div class="modal fade" id="staffDetailModal{{staff.id}}">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Staff <code>{{staff.staff_full_name}}</code> Detail information</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+              
+              <!-- Timeline -->
+              <ul class="timeline">
+                  <li class="timeline-item bg-white rounded mx-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <div class="item" style="display:flex;justify-content:space-between;">
+                        <div class="image">
+                          <img src="{{staff.staff_image.url }}" class="img-fluid" width="200px">
+                        </div>
+                        <div class="informations pl-2 m-1" style="display:inline-block;width:100%">
+                          <h2 class="h5 mb-0">Staff Basic information</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>Student name : <mark>{{staff.staff_full_name}}</mark></span>
+    `                       <hr class="sidebar-divider">
+                         
+                          <span class="text-small d-block mt-0 font-weight-light">Sex: <code>{{staff.gender}}</code></span>
+                          <span class="text-small d-block font-weight-light">Class: <code>{{staff.class_name}}</code></span>
+                          <span class="text-small d-block font-weight-light">Date joined: <code>{{staff.admission_date}}</code></span>
+                          <span class="text-small d-block font-weight-light">Phone number: <code> {{staff.phone_number}}</code></span>
+                          <span class="text-small d-block font-weight-light">Email: <code> {{staff.email}}</code></span>
+                        </div>
+                      </div>
+                      
+                  </li>
+                  <!-- <li class="timeline-item bg-white rounded mx-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Parent Details</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>name : {{staff.parent_name}}</span>
+    `                       <hr class="sidebar-divider">
+                      
+                      <p class="text-small mt-2 font-weight-light">Phone number : {{staff.parent_phone_number}}</p>
+                     
+                  </li> -->
+                  
+                  <!-- <li class="timeline-item bg-white rounded ml-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Title of section 3</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>18 August, 2019</span>
+                      <p class="text-small mt-2 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                  </li>
+                  <li class="timeline-item bg-white rounded ml-3 mb-2 p-4 shadow">
+                      <div class="timeline-arrow"></div>
+                      <h2 class="h5 mb-0">Title of section 4</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>10 October, 2019</span>
+                      <p class="text-small mt-2 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                      <p class="text-small mt-2 font-weight-light">Voluptatibus temporibus esse illum eum aspernatur, fugiat suscipit natus! Eum corporis illum nihil officiis tempore. Excepturi illo natus libero sit doloremque, laborum molestias rerum pariatur quam ipsam necessitatibus incidunt, explicabo.</p>
+                  </li> -->
+              </ul><!-- End -->
+
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
